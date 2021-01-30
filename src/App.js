@@ -55,7 +55,7 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <header>The House Of Muffins</header>
+        <header><h1>The House Of Muffins</h1></header>
         <nav>
             <div><Link to = "/" >Home</Link></div>
             <div><Link to = "/menu" >Menu</Link></div>
@@ -63,30 +63,30 @@ function App() {
             <div><Link to = "/bakedgoods" >Baked Goods</Link></div>
             <div><Link to = "/about" >About</Link></div>
         </nav>
-        
-        <Switch>
-          <Route path ="/" exact>
-            <Home />
-          </Route>
-          <Route path ="/menu">
-            <Menu />
-          </Route>
-          <Route path ="/gallery">
-            <Gallery cards={cards}/>
-          </Route>
-          <Route path ="/bakedgoods">
-            <BakedGoods />
-          </Route>
-          <Route path ="/about">
-            <About />
-          </Route>
-        </Switch>
-        
+        <main>
+          <Switch>
+            <Route path ="/" exact>
+              <Home />
+            </Route>
+            <Route path ="/menu">
+              <Menu />
+            </Route>
+            <Route path ="/gallery">
+              <Gallery cards={cards}/>
+            </Route>
+            <Route path ="/bakedgoods">
+              <BakedGoods />
+            </Route>
+            <Route path ="/about">
+              <About />
+            </Route>
+          </Switch>
+        </main>
         <aside>
           
         </aside>
         <footer>
-          <p>&copy ShoDotz </p>
+          <p>&copy Shoel Uddin </p>
         </footer>
       </div>
     </Router>

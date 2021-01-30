@@ -20,7 +20,11 @@ body {
     grid-template-columns: 90px 1fr 90px;
     grid-template-rows: auto 1fr auto;
     /* gap: 10px; */
-    background-color: white;
+    /* background-image: url('pictures/muffinBasket.png'); */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     /* padding: 0px;
     margin: 0px; */
@@ -31,9 +35,13 @@ body {
     flex-direction: column;
     text-align: center;
     /* grid-template-columns: 70px 70px 70px 1fr; */
-    background-color: rgb(153, 153, 35);
+    /* background-color: rgb(153, 153, 35); */
 }
-
+.pic {
+  border: 5px solid rgb(132, 148, 105);
+  padding-top: 10px;
+  color:rgb(175, 111, 50)
+}
 .cards {
     border: 5px solid rgb(85, 121, 27);
     padding-top: 10px;
@@ -42,7 +50,7 @@ body {
 header {
     text-align: center;
     grid-area: header;
-    background-color: #648ca6;
+    /* background-color: #648ca6; */
 }
 
 nav {
@@ -53,7 +61,12 @@ nav {
 
 main {
     grid-area: content;
-    background-color: rgb(66, 163, 115);
+    /* background-color: rgb(66, 163, 115); */
+    background-image: url('pictures/muffinBasket.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .title {
   text-align: center;

@@ -4,7 +4,7 @@ function Gallery (props) {
     console.log(props.cards);
     return (
         <>
-        <div>
+        <div className='main-inner-container'>
             <p className="title">The Gallery</p>
             {   
                 props.cards && props.cards.map &&
@@ -14,17 +14,7 @@ function Gallery (props) {
                         <img src={card.url} alt=""/>
                     </div>
                 ))
-
-
-
-
             }
-
-
-
-            
-            
-           
         </div>
         
         </>
