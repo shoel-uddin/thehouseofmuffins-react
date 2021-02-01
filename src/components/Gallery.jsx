@@ -5,13 +5,13 @@ function Gallery (props) {
     return (
         <>
         <div className='main-inner-container'>
-            <p className="title">The Gallery</p>
+            <p className="gallery-title">The Gallery</p>
             {   
                 props.cards && props.cards.map &&
                 props.cards.map(card => ( //props.cards.map is not a function then do the above.
-                    <div key= {card.id} className='pic'>
+                    <div key= {card.id} className='picCard'>
                         <p>{card.caption}</p>
-                        <img src={card.url} alt=""/>
+                        <img src={card.url} alt="" className="pic"/>
                     </div>
                 ))
             }

@@ -1,9 +1,12 @@
 import './App.css';
 import Home from './components/Home';
 import Menu from './components/Menu';
-import BakedGoods from './components/BakedGoods';
 import About from './components/About';
-
+import Footer from './components/Footer';
+import Items from './components/Items';
+import Gallery from './components/Gallery';
+import Header from './components/Header';
+import { useEffect, useState } from 'react';
 
 import { 
   BrowserRouter as Router,
@@ -11,15 +14,16 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import Gallery from './components/Gallery';
-import { useEffect, useState } from 'react';
 
-// require('dotenv').config();
+
+
 
 
 function App() {
 
   const [cards, setCard] = useState([])
+
+
   useEffect(() => {
     // InstaClient.authBySessionId('201216075%3ANgWa9H6sAzm4Kn%3A0')
 	  // .then(account => console.log(account))
@@ -28,7 +32,7 @@ function App() {
 
 
     async function getCard() {
-    const getInstaPics = fetch('https://www.instagram.com/graphql/query/?query_hash=003056d32c2554def87228bc3fd9668a&variables={"id":"42892210326","first":10}')
+    const getInstaPics = fetch('https://www.instagram.com/graphql/query/?query_hash=003056d32c2554def87228bc3fd9668a&variables={"id":"42892210326","first":50}')
     const response = await getInstaPics
     console.log(response);
     const cardData = await response.json()
@@ -39,8 +43,8 @@ function App() {
       id: edge.node.id
     }))
     console.log(card);
-    console.log(card[0].url); 
-    setCard(card[1].url)
+    // console.log(card[0].url); 
+    // setCard(card[1].url)
     // const newPost = [
     //   ...cards,
     //   card
@@ -55,13 +59,16 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <header><h1>The House Of Muffins</h1></header>
+        <Header />
         <nav>
-            <div><Link to = "/" >Home</Link></div>
-            <div><Link to = "/menu" >Menu</Link></div>
-            <div><Link to = "/gallery" >Gallery</Link></div>
-            <div><Link to = "/bakedgoods" >Baked Goods</Link></div>
-            <div><Link to = "/about" >About</Link></div>
+          <div className='navButton'>
+            <button><Link to = "/" >Home</Link></button>
+            <button><Link to = "/menu" >Menu</Link></button>
+            <button><Link to = "/gallery" >Gallery</Link></button>
+            <button><Link to = "/items" >Items</Link></button>
+            <button><Link to = "/about" >About</Link></button>
+          </div>
+            
         </nav>
         <main>
           <Switch>
@@ -74,8 +81,8 @@ function App() {
             <Route path ="/gallery">
               <Gallery cards={cards}/>
             </Route>
-            <Route path ="/bakedgoods">
-              <BakedGoods />
+            <Route path ="/items">
+              <Items />
             </Route>
             <Route path ="/about">
               <About />
@@ -85,9 +92,7 @@ function App() {
         <aside>
           
         </aside>
-        <footer>
-          <p>&copy Shoel Uddin </p>
-        </footer>
+        <Footer />
       </div>
     </Router>
     

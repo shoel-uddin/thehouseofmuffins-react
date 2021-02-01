@@ -1,6 +1,6 @@
 import React from'react'
 
-function BakedGoods () {
+function Items () {
     return (
         <div>
             <p>This is where the cards of BakedGoods will go!</p>
@@ -8,4 +8,4 @@ function BakedGoods () {
     )
 }
 
-export default BakedGoods;
+export default Items;
